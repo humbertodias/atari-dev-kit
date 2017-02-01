@@ -20,8 +20,7 @@ docker build -t hldtux/game-dev-kit-nes .
 Correndo
 
 ```
-docker run -t -v $PWD/src-games:/root/src-games -i hldtux/game-dev-kit-nes sh
-cd src-games
+docker run -t -v $PWD/src-games:/root/src-games -w /root/src-games -i hldtux/game-dev-kit-nes sh
 ```
 
 Por último, compile
