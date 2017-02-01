@@ -5,8 +5,9 @@ Servicio de CC65 para NES con Docker usando AlpineLinux.
 
 # Prerrequisitos
 
-1. [Docker](https://www.docker.com) 1.12+
+1. [Docker](www.docker.com) 1.12+
 2. [VirtualBox](www.virtualbox.org) 5.0+ (Necesario sólo para Mac o Windows)
+3. [FCEUX](http://www.fceux.com/) 2.2.3+
 
 # Cómo empezar
 
@@ -89,10 +90,12 @@ hldtux/game-dev-kit-nes   latest              8d717e697d42        51 seconds ago
 
 # Referencias
 
-1. [www.docker.com](https://www.docker.com)
+1. [docker.com](https://www.docker.com)
 
 2. [hub.docker.com](https://hub.docker.com)
 
 3. [alpinelinux.org](https://alpinelinux.org)
 
 4. [cc65.org](http://www.cc65.org/)
+
+5. [nesdoug.com](https://nesdoug.com/)
