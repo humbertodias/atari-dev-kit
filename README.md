@@ -1,6 +1,6 @@
 # ¿Qué es?
 
-Servicio de CC65 con Docker usando AlpineLinux.
+Servicio de CC65 para NES con Docker usando AlpineLinux.
 
 
 # Prerrequisitos
@@ -29,11 +29,14 @@ Por último, compile
 cl65 -t nes hello-nes.c -o hello.nes
 ```
 
-Respuesta
+Salida
 
 ```
-hello.nes
+fceux hello.nes
 ```
+
+![](doc/output.png)
+
 
 # Cómo detener
 
@@ -79,7 +82,7 @@ Mostrar docker imágenes
 docker images
 ```
 
-
+```
 REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
 hldtux/game-dev-kit-nes   latest              8d717e697d42        51 seconds ago      77.3 MB
 ```
