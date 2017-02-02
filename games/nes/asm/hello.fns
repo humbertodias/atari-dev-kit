@@ -1,0 +1,12 @@
+; hello.asm
+palette                          = $C092
+palloop                          = $C047
+vblank_cycle                     = $C08C
+end                              = $C086
+load_attr                        = $C06F
+Reset                            = $C000
+print_message                    = $C052
+raml                             = $C00F
+dummy                            = $C0A7
+message                          = $C096
+msgloop                          = $C061

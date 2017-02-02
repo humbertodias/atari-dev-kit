@@ -1,29 +1,53 @@
 # ¿Qué es?
 
-Servicio de CC65 para NES con Docker usando AlpineLinux.
+
+Servicio Docker para compilar juegos escritos en C y Assembly para Atari y NES utilizando Alpine Linux.
+
+
+
+Suportados:
+**Atari 2600, 5200, 7800, lynx e NES**
 
 
 # Prerrequisitos
 
 1. [Docker](www.docker.com) 1.12+
 2. [VirtualBox](www.virtualbox.org) 5.0+ (Necesario sólo para Mac o Windows)
-3. [FCEUX](http://www.fceux.com/) 2.2.3+
 
+
+# Emuladores
+1. Atari 2600 - [Stella](https://stella-emu.github.io/) 4.7.3+
+1. Atari 5200 - [Atari800](http://atari800.sourceforge.net/) 2.2.1+
+1. Atari 7800 - [OpenEmu](http://openemu.org/) 2.0.4+
+2. Atari Lynx - [Handy](http://bannister.org/software/handy.htm) 0.9.7+
+3. NES - [FCEUX](http://www.fceux.com/) 2.2.3+
+ 
 # Cómo empezar
 
 Construir
 
 ```
-docker build -t hldtux/game-dev-kit-nes .
+docker build -t hldtux/game-dev-kit-cc65 .
 ```
 
 Correndo
 
 ```
-docker run -t -v $PWD/src-games:/root/src-games -w /root/src-games -i hldtux/game-dev-kit-nes sh
+docker run -t -v $PWD/games:/root/games -w /root/games -i hldtux/game-dev-kit-cc65 sh
 ```
 
 Por último, compile
+
+### Atari 2600
+
+```
+cc65 -O -t c64 hello.c
+ca65 hello.s
+ca65 -t c64 text.s
+ld65 -t c64 -o hello hello.o text.o c64.lib
+```
+
+### NES
 
 ```
 cl65 -t nes hello-nes.c -o hello.nes
@@ -31,11 +55,37 @@ cl65 -t nes hello-nes.c -o hello.nes
 
 Salida
 
+
+```
+stella hello.a26
+```
+
+![](doc/atari-2600.png)
+
+```
+atari800 hello.a52
+```
+
+![](doc/atari-5200.png)
+
+```
+prosystem hello.a78
+```
+
+![](doc/atari-7800.png)
+
+```
+handy hello.lyx
+```
+
+![](doc/atari-lynx.png)
+
+
 ```
 fceux hello.nes
 ```
 
-![](doc/output.png)
+![](doc/nes.png)
 
 
 # Cómo detener
@@ -48,7 +98,7 @@ docker ps
 
 ```
 CONTAINER ID        IMAGE                     COMMAND             CREATED              STATUS              PORTS               NAMES
-529080b6b161        hldtux/game-dev-kit-nes   "sh"                About a minute ago   Up About a minute                       boring_hodgkin
+529080b6b161        hldtux/game-dev-kit-cc65   "sh"                About a minute ago   Up About a minute                       boring_hodgkin
 ```
 
 Parada
@@ -84,7 +134,7 @@ docker images
 
 ```
 REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
-hldtux/game-dev-kit-nes   latest              8d717e697d42        51 seconds ago      77.3 MB
+hldtux/game-dev-kit-cc65   latest              8d717e697d42        51 seconds ago      77.3 MB
 ```
 
 # Referencias
@@ -98,3 +148,5 @@ hldtux/game-dev-kit-nes   latest              8d717e697d42        51 seconds ago
 4. [cc65.org](http://www.cc65.org/)
 
 5. [nesdoug.com](https://nesdoug.com/)
+
+6. [atarilynxdeveloper.com](https://atarilynxdeveloper.wordpress.com/2012/04/05/programming-tutorial-part-1getting-started/)
