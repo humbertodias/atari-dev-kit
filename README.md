@@ -17,7 +17,7 @@ Suportados:
 
 # Emuladores
 1. Atari 2600 - [Stella](https://stella-emu.github.io/) 4.7.3+
-1. Atari 5200 - [Atari800](http://atari800.sourceforge.net/) 2.2.1+
+1. Atari 5200 - [Atari800](http://www.atarimac.com/atari800macx.php) 2.2.1+
 1. Atari 7800 - [OpenEmu](http://openemu.org/) 2.0.4+
 2. Atari Lynx - [Handy](http://bannister.org/software/handy.htm) 0.9.7+
 3. NES - [FCEUX](http://www.fceux.com/) 2.2.3+
@@ -41,16 +41,28 @@ Por último, compile
 ### Atari 2600
 
 ```
-cc65 -O -t c64 hello.c
-ca65 hello.s
-ca65 -t c64 text.s
-ld65 -t c64 -o hello hello.o text.o c64.lib
+cd atari-2600/asm/hello
+make
 ```
 
-### NES
+```
+dasm hello.asm -ohello.a26 -f3
+```
+
+![](doc/atari-2600.png)
+
+
+### Atari 5200
 
 ```
-cl65 -t nes hello-nes.c -o hello.nes
+atari-5200/c/hello
+make
+```
+
+```
+mv hiworld hiworld.xex
+cp hiworld.atr.in hiworld.atr
+/usr/bin/franny -A -i hiworld.xex -o HIWORLD.AR0 hiworld.atr
 ```
 
 Salida
