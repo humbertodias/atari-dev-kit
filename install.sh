@@ -1,5 +1,5 @@
 # dependencies
-apk add make gcc g++ musl-dev openssl
+apk add make gcc g++ musl-dev ca-certificates openssl
 
 # Install
 cd /root

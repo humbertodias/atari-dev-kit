@@ -162,3 +162,5 @@ hldtux/game-dev-kit-cc65   latest              8d717e697d42        51 seconds ag
 5. [nesdoug.com](https://nesdoug.com/)
 
 6. [atarilynxdeveloper.com](https://atarilynxdeveloper.wordpress.com/2012/04/05/programming-tutorial-part-1getting-started/)
+
+7. [Compile Assembly Code for the Atari 2600](http://atariprojects.org/2019/01/20/compile-assembly-code-for-the-atari-2600-10-15-mins/)
