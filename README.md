@@ -1,19 +1,15 @@
 # ¿Qué es?
 
-
 Servicio Docker para compilar juegos escritos en C y Assembly para Atari y NES utilizando Alpine Linux.
-
-
 
 Suportados:
 **Atari 2600, 5200, 7800, lynx e NES**
 
-
 # Prerrequisitos
 
-1. [Docker](www.docker.com) 1.12+
-2. [VirtualBox](www.virtualbox.org) 5.0+ (Necesario sólo para Mac o Windows)
-
+1. [Docker](www.docker.com) 18+
+2. [VirtualBox](www.virtualbox.org) 6.0+ (Necesario sólo para Mac o Windows)
+3. [Make](https://www.gnu.org/software/make)
 
 # Emuladores
 1. Atari 2600 - [Stella](https://stella-emu.github.io/) 4.7.3+
@@ -27,13 +23,13 @@ Suportados:
 Construir
 
 ```
-docker build -t hldtux/game-dev-kit-cc65 .
+make build
 ```
 
 Correndo
 
 ```
-docker run -t -v $PWD/games:/root/games -w /root/games -i hldtux/game-dev-kit-cc65 sh
+make run
 ```
 
 Por último, compile
@@ -163,4 +159,4 @@ hldtux/game-dev-kit-cc65   latest              8d717e697d42        51 seconds ag
 
 6. [atarilynxdeveloper.com](https://atarilynxdeveloper.wordpress.com/2012/04/05/programming-tutorial-part-1getting-started/)
 
-7. [Compile Assembly Code for the Atari 2600](http://atariprojects.org/2019/01/20/compile-assembly-code-for-the-atari-2600-10-15-mins/)
+7. [Compile Assembly Code for the Atari 2600](http://atariprojects.org/2019/01/20/compile-assembly-code-for-the-atari-2600-10-15-mins)
