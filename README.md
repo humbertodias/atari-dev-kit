@@ -55,12 +55,6 @@ atari-5200/c/hello
 make
 ```
 
-```
-mv hiworld hiworld.xex
-cp hiworld.atr.in hiworld.atr
-/usr/bin/franny -A -i hiworld.xex -o HIWORLD.AR0 hiworld.atr
-```
-
 Salida
 
 
