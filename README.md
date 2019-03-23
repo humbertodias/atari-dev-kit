@@ -164,3 +164,5 @@ hldtux/game-dev-kit-cc65   latest              8d717e697d42        51 seconds ag
 8. [atari-2600-a-personal-journey-into-the-past](https://blog.classycode.com/the-atari-2600-a-personal-journey-into-the-past-5b8cadebc6eb)
 
 9. [Atari source code games](http://www.bjars.com/sourcecode.html)
+
+10. [Atari 7800 - Examples](http://atarihq.com/danb/a7800.shtml)
